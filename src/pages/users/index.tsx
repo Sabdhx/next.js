@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+
 function Username() {
   const router = useRouter();
   console.log(router.query.username);
