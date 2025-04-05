@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
 import useSWR from "swr"
 
 
@@ -15,10 +14,9 @@ console.log(props.data.firstName)
   </div>;
 }
 
+export const getServerSideProps=async(context:any)=>{
 
-export const getServerSideProps=async(dataa:object)=>{
-
-  const {id} = dataa.query
+  const {id} = context.query
   console.log("this is server side rendering")
   const data = await ((await fetch("https://dummyjson.com/users/"+id ))).json()
 

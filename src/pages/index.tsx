@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 
-type Props = {}
 
-function index({}: Props) {
+
+function Index() {
   const router = useRouter()
   return (
     <div>
@@ -13,4 +13,4 @@ function index({}: Props) {
   )
 }
 
-export default index
+export default Index

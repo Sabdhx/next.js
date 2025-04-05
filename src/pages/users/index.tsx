@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 function Username() {
   const router = useRouter();
   console.log(router.query.username);
-  const [data,setData] = useState([])
+  const [data,setData] = useState<any>([])
 
   useEffect(()=>{
     async function fetchingData() {
