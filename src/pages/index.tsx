@@ -7,7 +7,7 @@ function Index() {
   const router = useRouter()
   return (
     <div>
-      <button onClick={()=>router.push(`/users
+      <button onClick={()=>router.push(`/static/users
         `)}>Route</button>
     </div>
   )

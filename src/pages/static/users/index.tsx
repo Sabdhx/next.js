@@ -1,16 +1,17 @@
 import Link from "next/link";
 import React from "react";
 
-
-function Users(props:any) {
+function Users(props: any) {
   console.log(props.data.users);
   return (
     <div>
-      {props.data.users.map((item: any) => {
+      {props.data.users.map((item: any, index: number) => {
         return (
-          <>
-            <li><Link href={`/[id]`} className="cursor-pointer" >{item.firstName}</Link></li>
-          </>
+          <li>
+            <Link href={`/static/users/${item.id}`} className="cursor-pointer">
+              {item.firstName}
+            </Link>
+          </li>
         );
       })}
     </div>
