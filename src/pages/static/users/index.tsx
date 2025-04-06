@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 
@@ -8,7 +9,7 @@ function Users(props:any) {
       {props.data.users.map((item: any) => {
         return (
           <>
-            <li>{item.firstName}</li>
+            <li><Link href={`/[id]`} className="cursor-pointer" >{item.firstName}</Link></li>
           </>
         );
       })}
