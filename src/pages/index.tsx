@@ -1,26 +1,33 @@
-import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 
+import { signIn, useSession,signOut } from "next-auth/react";
 function Index() {
-  const router = useRouter();
+
+  const {data:session , status} =  useSession()
+  console.log(session)
+
+
+  if(status === "loading"){
+    <p>...loading</p>
+  }
   return (
     <div>
-      <button
-        onClick={() =>
-          router.push(`/static/users
-        `)
-        }
-      >
-        Route
-      </button>
+      {
+        session ? (
+            <>
+            <p>hello {session?.user?.name}</p>
+            <button className="" onClick={()=>signOut()}>logout</button>
+            </>
+        ): (
+            <>
+            <button onClick={()=>{
+              signIn()
+            }}>login</button>
+            </>
+        )
+      }
 
-      <Image
-        src={`https://images.unsplash.com/photo-1731102310685-f080a97ab748?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8`}
-        alt="there is an error loading image"
-        width={200}
-        height={200}
-      />
     </div>
   );
 }
