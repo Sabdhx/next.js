@@ -3,10 +3,7 @@ const UserPage=(props:any)=>{
   return(
     <>
     <h1>
-     
         <div>{props.data.firstName}</div>
-     
-  
     </h1>
     </>
   )
