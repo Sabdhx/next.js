@@ -5,7 +5,7 @@ export const authOptions = {
   providers:[
     GithubProvider({
       clientId:"Ov23limfSI7V32mm4oF2",
-      clientSecret:"9faa5b3e0eba16302b73e83994f773001540f633"
+      clientSecret:"55aae59a3a2affc04151bce6cda5818e8fcb48ea"
 })]}
 
 
